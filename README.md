@@ -1,6 +1,3 @@
-run this command to get nodemodules 
-npm install
 
-
-to run the project write this command 
+npm install  -->to get nodemodules
 nodemon index.js/node index.js
