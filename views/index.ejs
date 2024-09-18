@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Services</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Healthcare Services</h1>
+    <!-- <img src="/doctor.gif" alt="Description of image"> -->
+
+    <form method="GET" action="/services/new">
+        <button>Create New Service</button>
+    </form>
+    <br>
+    <h3>All Services</h3>
+
+    <% for (let service of services) { %>
+        <div class="service">
+            <p>Service: <%= service.serviceName %></p>
+            <p>Name: <%= service.description %></p>
+            <p>Price: $<%= service.price.toFixed(2) %></p>
+            
+            <!-- Edit button -->
+            <form method="GET" action="/services/<%= service._id %>/edit">
+                <button>update</button>
+            </form>
+            
+            <!-- Delete button -->
+            <form method="POST" action="/services/<%= service._id %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>
