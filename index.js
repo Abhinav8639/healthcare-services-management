@@ -31,8 +31,8 @@ app.get("/services",async(req,res)=>{
     res.render("index.ejs",{services});
 
     });
-app.get("/",(req,res)=>{
-    res.send("root is woriking ");
+app.get("/", (req, res) => {
+    res.redirect("/services");
 });
 //new route
 app.get("/services/new",(req,res)=>{
